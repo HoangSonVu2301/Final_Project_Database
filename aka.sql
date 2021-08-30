@@ -4,7 +4,7 @@ SET foreign_key_checks=0;
 USE restaurant;
 CREATE TABLE employee(
 	emID int primary key,
-    employee_name varchar(30),
+    employee_name varchar(30), 
     phone_number int,
     shift varchar(30),
     employee_role varchar(30),
@@ -303,190 +303,99 @@ CREATE TABLE use_of_portion(
 );
 
 insert into employee values (1028, 'Lam Gia Bao', 0916175566, 'day', 'accountant');
-insert into employee values (1234, 'Lai Van Dung', 0911983360, 'night', 'waiter');
 insert into employee values (1235, 'Luong Xuan Truong', 0988585568, 'day', 'manager');
 insert into employee values (1456, 'Vu Viet Huong', 0978557560, 'night', 'accountant');
 insert into employee values (1475, 'Khalid Mi Golem', 0988585571, 'night', 'manager');
-insert into employee values (2222, 'Do Thi My Truc', 0988837462, 'night', 'security');
 insert into employee values (2315, 'Nguyen Phu Quy', 0942858857, 'day', 'administrator');
-insert into employee values (2345, 'Luc Thi Thuy My', 0988585591, 'night', 'waiter');
-insert into employee values (2486, 'Doan Chung', 0988585573, 'day', 'shipper');
 insert into employee values (2541, 'Doan Chi Binh', 0988587345, 'day', 'shipper');
 insert into employee values (2543, 'Hoang Gia Cat Thinh', 0988585578, 'night', 'shipper');
 insert into employee values (3180, 'Tran Huy Khanh', 0988585587, 'night', 'waiter');
-insert into employee values (3456, 'Nguyen Tran Xuan Hao', 0932871599, 'day', 'chef');
-insert into employee values (4587, 'Ly Hoang Hung', 0988585576, 'day', 'shipper');
 insert into employee values (5556, 'Kris Wu', 0988582411, 'day', 'chef');
-insert into employee values (5957, 'Ngo Thi My Dung', 0372583788, 'night', 'waiter');
-insert into employee values (6047, 'Nguyen Gia Dinh', 0988585583, 'night', 'shipper');
 insert into employee values (6401, 'Duong Hoang Anh Khoa', 0903875923, 'day', 'security');
 insert into employee values (6480, 'Lam Gia Khang', 0988585586, 'day', 'waiter');
-insert into employee values (6658, 'Lam Cat Trung', 0988585574, 'day', 'shipper');
-insert into employee values (6674, 'Hoang Dao My Nghi', 0988585579, 'night', 'shipper');
-insert into employee values (6801, 'Hoang Manh Cong', 0988585584, 'day', 'waiter' );
-insert into employee values (6985, 'Ly Van Kiet', 0988585575, 'day', 'shipper');
-insert into employee values (7001, 'Tran Binh My', 0988585388, 'night', 'chef');
-insert into employee values (7045, 'Gia Cat Tai', 0964925561, 'day', 'waiter');
-insert into employee values (7781, 'Luong Hoang Ha', 0915827580, 'night', 'shipper');
 insert into employee values (8423, 'Nguyen Hoai Linh', 0934185505, 'night', 'chef');
-insert into employee values (9093, 'Mai Xuan Thu', 0988585581, 'night', 'shipper');
-insert into employee values (9095, 'Daniel Ngo', 0933785582, 'night', 'shipper');
-insert into employee values (9461, 'Dang Hong Mai Thu', 0988585589, 'night', 'waiter');
 
-
-insert into shipper values (2486, 'Motor');
 insert into shipper values (2541, 'Motor');
 insert into shipper values (2543, 'Motor');
-insert into shipper values (4587, 'Motor');
-insert into shipper values (6047, 'Motor');
-insert into shipper values (6658, 'Motor');
-insert into shipper values (6674, 'Motor');
-insert into shipper values (6985, 'Motor');
-insert into shipper values (7781, 'Motor');
-insert into shipper values (9093, 'Motor');
-insert into shipper values (9095, 'Motor');
 
 insert into accountant values (1028);
 insert into accountant values (1456);
 
 insert into security_guard values (6401);
-insert into security_guard values (8423);
 
-insert into waiter values (1234);
-insert into waiter values (2345);
 insert into waiter values (3180);
-insert into waiter values (5957);
 insert into waiter values (6480);
-insert into waiter values (6801);
-insert into waiter values (7045);
-insert into waiter values (9461);
 
-insert into chef values (3456);
 insert into chef values (5556);
-insert into chef values (7001);
 insert into chef values (8423);
 
 insert into manager values (1235);
 insert into manager values (1475);
 
-insert into manage values (16, 1028, 1235);
-insert into manage values (7.5, 2315, 1235);
-insert into manage values (8, 2486, 1235);
-insert into manage values (16, 6658, 1235);
-insert into manage values (15, 6985, 1235);
-insert into manage values (15.5, 4587, 1235);
-insert into manage values (16, 2541, 1235);
-insert into manage values (18, 6801, 1235);
-insert into manage values (18, 7045, 1235);
-insert into manage values (16, 6480, 1235);
-insert into manage values (16, 3456, 1235);
-insert into manage values (16, 5556, 1235);
-insert into manage values (16, 6401, 1235);
-insert into manage values (16, 2222, 1475);
+
 insert into manage values (11, 1456, 1475);
 insert into manage values (12, 8423, 1475);
 insert into manage values (12, 2543, 1475);
-insert into manage values (12.5, 6674, 1475);
-insert into manage values (13, 7781, 1475);
-insert into manage values (14, 9093, 1475);
+insert into manage values (7.5, 2315, 1235);
+insert into manage values (16, 2541, 1235);
+insert into manage values (16, 1028, 1235);
+insert into manage values (16, 6480, 1235);
+insert into manage values (16, 5556, 1235);
+insert into manage values (16, 6401, 1235);
 
 insert into administrator values (2315, 'nguyenphuquy@gmail.com');
 
-insert into customer values (3502, 'Dang Tuan Anh', 0919814702, 4, '10:30:00');
-insert into customer values (3554, 'Pham Hoang Anh', 0977475566, 2, '12:30:00');
-insert into customer values (3538, 'Do Gia Bao', 0975924124, 4, '12:30:00');
-insert into customer values (3509, 'Nguyen Le Hieu', 0924919274, 4, '12:30:00');
-insert into customer values (3514, 'Mac Trung Duc', 0983568618, 6, '13:00:00');
-insert into customer values (3560, 'Michael Pham', 0916385316, 3, '13:00:00');
-insert into customer values (3524, 'Daniel Smith', 0938504583, 4, '5:00:00');
-insert into customer values (3569, 'John Dell', 0915085455, 3, '5:00:00');
-insert into customer values (3584, 'Darik Peterson', 0949575707, 3, '5:30:00');
-insert into customer values (3542, 'Saki Ukai', 0996626689, 3, '6:00:00');
-insert into customer values (3549, 'Pham Vu Ngoc Diep', 0912913360, 2, '6:00:00');
-insert into customer values (3529, 'Dinh Thuy Linh', 0961557107, 4, '6:00:00');
-insert into customer values (4493, 'Park MinKyung', 0926116304, 3, '11:00:00');
-insert into customer values (4521, 'Nguyen Nam Giang', 0958442018, 4, '11:00:00');
-insert into customer values (4487, 'Ngo Gia Minh', 0928926222, 5, '11:30:00');
-insert into customer values (4553, 'Mai Hoang Duc', 0969296063, 4, '12:00:00');
-insert into customer values (4539, 'Nguyen Quoc Huy', 0954086097, 3, '12:00:00');
-insert into customer values (4462, 'Phan The Bao', 0916275059, 5, '12:00:00');
-insert into customer values (4534, 'Phan Hong Ngoc', 0983290694, 2, '12:00:00');
-insert into customer values (4515, 'Pham Vu Diep Lam', 0981461529, 3, '12:00:00');
-insert into customer values (4466, 'Vu Duc Huy', 0946344558, 2, '12:30:00');
-insert into customer values (4540, 'Nguyen Huu Khanh', 0986671459, 3, '12:30:00');
-insert into customer values (4480, 'Le Quang Phong', 0956524355, 4, '12:30:00');
-insert into customer values (4508, 'Saigou Homura', 0994943861, 3, '12:30:00');
-insert into customer values (4506, 'Tran Gia Huy', 0963369890, 4, '12:30:00');
+insert into customer values (3502, 'Dang Tuan Anh', 0919814702, 4);
+insert into customer values (3554, 'Pham Hoang Anh', 0977475566, 2);
+insert into customer values (3538, 'Do Gia Bao', 0975924124, 4);
+insert into customer values (3509, 'Nguyen Le Hieu', 0924919274, 4);
+insert into customer values (3514, 'Mac Trung Duc', 0983568618, 6
+insert into customer values (3550, 'Hoang Duc Anh', 940282363, 3);
+insert into customer values (3560, 'Michael Pham', 0916385316, 3);
+insert into customer values (3524, 'Daniel Smith', 0938504583, 4);
+insert into customer values (3569, 'John Dell', 0915085455, 3);
+insert into customer values (3551, 'Luu Trang Anh', 9397234325, 3);
+			     
+			     
+insert into users values ('jack97', 'jack97@gmail.com', '206978673819', '84 Pham Van Chieu Ward 9 Go Vap District Ho Chi Minh Vietnam');			     
+insert into users values ('chaoyenmach', 'chaoyenmach@gmail.com', '563616534504', '713B Dien Bien Phu Ward 22 Binh Thanh District Ho Chi Minh Vietnam');			     
+insert into users values ('phobokhonghanh', 'phobokhonghanh@gmail.com', '791290981457', '100 Tran Hung Dao Pham Ngu Lao Ward District 1, Ho Chi Minh Vietnam');
+insert into users values ('congdungngonhanh', 'congdungngonhanh@gmail.com', '397052573330', '114 Street No. 2 Do Thanh Residence Ward 04 District 3, Ho Chi Minh Vietnam');
+insert into users values ('dunghanhatm', 'dunghanhatm@gmail.com', '542659193128', '294 lo 8 Cu Chi Ho Chi Minh City Vietnam');		     
+insert into users values ('viyeumaden', 'viyeumaden@gmail.com', '576167114329', '29A Nguyen Dinh Chieu Da Kao Ward District 1 Ho Chi Minh Vietnam');			     
+insert into users values ('hoado', 'hoado@gmail.com', '528440752052', '65 Le Loi Dist 1 Ho Chi Minh City Vietnam');			     
+insert into users values ('kicm', 'kicm@gmail.com', '316824027259', '400 - 402 Ton Dan Ward 4 District 4 Ho Chi Minh Vietnam');		
+insert into users values ('bundaumamtom', 'bundaumamtom@gmail.com', '186492426733', '19 Nguyen Binh Khiem Da Kao Ward District 1 Ho Chi Minh Vietnam');
+insert into users values ('comtam', 'comtam@gmail.com', '776986750239', '290 Cach Mang Thang Tam Ward 12 District 10 Ho Chi Minh Vietnam');			     
+			     
+				    			     
+			     
+insert into crud values ('TRUE', 10, 0.15, 2315, 'tachfinal');			     
+insert into crud values ('FALSE', 10, 0.26, 2315, 'tmuondian');			     
+insert into crud values ('TRUE', 10, 0.55, 2315, 'ngusuotngay');			     
+insert into crud values ('TRUE', 10, 0.13, 2315, 'buncha');			     
+insert into crud values ('TRUE', 10, 0.12, 2315, 'onhachanqua');			     
+insert into crud values ('TRUE', 10, 0.11, 2315, 'aothatday');			     
+insert into crud values ('TRUE', 7.3, 0.22, 2315, 'taobao');			     
+			     
 
-insert into users values ('hoado', 'hoado@gmail.com', '528440752052', '65 Le Loi Dist 1 Ho Chi Minh City Vietnam', 3452);
-insert into users values ('dunghanhatm', 'dunghanhatm@gmail.com', '542659193128', '294 lo 8 Cu Chi Ho Chi Minh City Vietnam', 4334);
-insert into users values ('kicm', 'kicm@gmail.com', '316824027259', '400 - 402 Ton Dan Ward 4 District 4 Ho Chi Minh Vietnam', 3464);
-insert into users values ('jack97', 'jack97@gmail.com', '206978673819', '84 Pham Van Chieu Ward 9 Go Vap District Ho Chi Minh Vietnam', 6534);
-insert into users values ('chaoyenmach', 'chaoyenmach@gmail.com', '563616534504', '713B Dien Bien Phu Ward 22 Binh Thanh District Ho Chi Minh Vietnam', 6335);
-insert into users values ('phobokhonghanh', 'phobokhonghanh@gmail.com', '791290981457', '100 Tran Hung Dao Pham Ngu Lao Ward District 1, Ho Chi Minh Vietnam', 3462);
-insert into users values ('bundaumamtom', 'bundaumamtom@gmail.com', '186492426733', '19 Nguyen Binh Khiem Da Kao Ward District 1 Ho Chi Minh Vietnam', 8567);
-insert into users values ('comtam', 'comtam@gmail.com', '776986750239', '290 Cach Mang Thang Tam Ward 12 District 10 Ho Chi Minh Vietnam', 1356);
-insert into users values ('viyeumaden', 'viyeumaden@gmail.com', '576167114329', '29A Nguyen Dinh Chieu Da Kao Ward District 1 Ho Chi Minh Vietnam', 4672);
-insert into users values ('congdungngonhanh', 'congdungngonhanh@gmail.com', '397052573330', '114 Street No. 2 Do Thanh Residence Ward 04 District 3, Ho Chi Minh Vietnam', 1123);
-insert into users values ('covid21', 'covid21@gmail.com', '579982624907', '1119 Tran Hung Dao Ward 05 District 5 Ho Chi Minh Vietnam', 1231);
-insert into users values ('chungtalaconnguoi', 'chungtalaconnguoi@gmail.com', '767602573311', '175 Phan Chu Trinh Ward 13 Binh Thanh District Ho Chi Minh Vietnam', 1342);
-insert into users values ('hocsinhgioi', 'hocsinhgioi@gmail.com', '945790189725', '10 Tran Van Quang Ward 10 Tan Binh District Ho Chi Minh Vietnam', 7363);
-insert into users values ('connhanguoita', 'connhanguoita@gmail.com', '159923812172', '18 Giai Phong Ward 4 Tan Binh District Ho Chi Minh Vietnam', 3535);
-insert into users values ('tachfinal', 'tachfinal@gmail.com', '252554025351', '97 Pham Huu Lau Quarter 2 Phu My Ward District 7 Ho Chi Minh Vietnam', 5632);
-insert into users values ('onhachanqua', 'onhachanqua@gmail.com', '566996960750', 'Floor 72 Landmark 81 Building Vinhomes Central Park 720A Dien Bien Phu Ward 22 Binh Thanh District Ho Chi Minh Vietnam', 2452);
-insert into users values ('tmuondian', 'tmuondian@gmail.com', '978945777820', 'No. 44 Street 56 Binh Trung Dong Ward Thu Duc City Ho Chi Minh Vietnam', 6735);
-insert into users values ('hoctaithiphan', 'hoctaithiphanl@gmail.com', '525715463034', '44/12 Street 7 Hiep Binh Chanh Ward Thu Duc City Ho Chi Minh Vietnam', 4562);
-insert into users values ('ngusuotngay', 'ngusuotngay@gmail.com', '946193694584', 'A1/8 Hamlet 1 Tan Kien Commune Binh Chanh District Ho Chi Minh Vietnam', 6316);
-insert into users values ('tapcanbinh', 'tapcanbinh@gmail.com', '353516290139', 'B8/26B VO VAN VAN Vinh Loc B Commune Binh Chanh District Ho Chi Minh Vietnam',3463);
-insert into users values ('aothatday', 'aothatday@gmail.com', '306671365624', '8th floor 520 Cach Mang Thang 8 Ward 11 District 3 Ho Chi Minh Vietnam', 6314);
-insert into users values ('chacalavong', 'chacalavong@gmail.com', '575014816423', '27C Quoc Huong Thao Dien Ward Thu Duc City Ho Chi Minh Vietnam', 2464);
-insert into users values ('bunthitnuong', 'bunthitnuong@gmail.com', '429928078200', '395 Nguyen Van Qua Quarter 4 Dong Hung Thuan Ward District 12, Ho Chi Minh Vietnam', 3463);
-insert into users values ('buncha', 'buncha@gmail.com', '358459457414', '80/8 Duong Cong Khi Street Hamlet 4 Xuan Thoi Son Commune Hoc Mon District Ho Chi Minh Vietnam', 1496);
-insert into users values ('mycayhanquoc', 'mycayhanquoc@gmail.com', '962167561822', '385D Nguyen Trai Nguyen Cu Trinh Ward District 1 Ho Chi Minh Vietnam', 8732);
-insert into users values ('comchannuoc', 'comchannuoc@gmail.com', '788854507403', 'L10-06 10th Floor Vincom Center Building 72 Le Thanh Ton Ben Nghe Ward District 1 Ho Chi Minh Vietnam', 9643);
-
-insert into crud values ('TRUE', 7, 0.2, 2315, 'hoado');
-insert into crud values ('TRUE', 7.5, 0.15, 2315, 'dunghanhatm');
-insert into crud values ('TRUE', 7, 0.15, 2315, 'kicm');
-insert into crud values ('TRUE', 8, 0, 2315, 'jack97');
-insert into crud values ('TRUE', 8.3, 0, 2315, 'chaoyenmach');
-insert into crud values ('TRUE', 7.6, 0.12, 2315, 'phobokhonghanh');
-insert into crud values ('TRUE', 6.6, 0, 2315, 'bundaumamtom');
-insert into crud values ('TRUE', 8.4, 0.12, 2315, 'comtam');
-insert into crud values ('TRUE', 8 ,0.12, 2315, 'viyeumaden');
-insert into crud values ('TRUE', 8, 0.13, 2315, 'congdungngonhanh');
-insert into crud values ('TRUE', 9, 0.12, 2315, 'covid21');
-insert into crud values ('TRUE', 9.5, 0.4, 2315, 'chungtalaconnguoi');
-insert into crud values ('TRUE', 10, 0.5, 2315, 'hocsinhgioi');
-insert into crud values ('TRUE', 10, 0.13, 2315, 'connhanguoita');
-insert into crud values ('TRUE', 10, 0.15, 2315, 'tachfinal');
-insert into crud values ('TRUE', 10, 0.12, 2315, 'onhachanqua');
-insert into crud values ('FALSE', 10, 0.26, 2315, 'tmuondian');
-insert into crud values ('TRUE', 10, 0.22, 2315,  'hoctaithiphan');
-insert into crud values ('TRUE', 10, 0.55, 2315, 'ngusuotngay');
-insert into crud values ('TRUE', 10, 0.12, 2315, 'tapcanbinh');
-insert into crud values ('TRUE', 10, 0.11, 2315, 'aothatday');
-insert into crud values ('TRUE', 10, 0.1, 2315, 'chacalavong');
-insert into crud values ('TRUE', 10, 0.1, 2315, 'bunthitnuong');
-insert into crud values ('TRUE', 10, 0.13, 2315, 'buncha');
-insert into crud values ('TRUE', 10, 0, 2315, 'mycayhanquoc');
-
-insert into status_of_order values (1247121, 20210816, 0.25, 'yes', NULL, 3550, 'cash', 'None');
-insert into status_of_order values (1247127, 20210816, NULL, 'no', NULL, 6735, 'banking transfer', 'None');
-insert into status_of_order values (1247128, 20210816, NULL, 'no', NULL, 3482, 'banking transfer', 'None');
-insert into status_of_order values (1247129, 20210816, NULL, 'no', NULL, 3510, 'cash', 'None');
-insert into status_of_order values (1247130, 20210816, NULL, 'no', 2541, 1496, 'cash', 'buncha' );
-insert into status_of_order values (1247131, 20210816, NULL, 'no', 2541, 8553, 'cash', 'taobao');
-insert into status_of_order values (1247132, 20210816, NULL, 'no', NULL, 6316, 'cash', 'tmuondian');
-insert into status_of_order values (1247133, 20210816, NULL, 'no', NULL, 6314, 'cash', 'ngusuotngay');
-insert into status_of_order values (5512134, 20210817, NULL, 'no', NULL, 3551, 'cash', 'None');
-insert into status_of_order values (5512135, 20210817, NULL, 'no', 2543, 1120, 'cash', 'alibaba');
-insert into status_of_order values (5512136, 20210817, NULL, 'no', NULL, 3527, 'cash', 'None');
-insert into status_of_order values (5512137, 20210817, NULL, 'no', NULL, 3494, 'cash', 'None');
-insert into status_of_order values (5512138, 20210817, NULL, 'no', NULL, 3581, 'cash', 'None');
-insert into status_of_order values (5512139, 20210817, NULL, 'no', NULL, 3523, 'cash', 'None');
-insert into status_of_order values (5512140, 20210817, NULL, 'no', NULL, 3517, 'cash', 'None');
-insert into status_of_order values (5512141, 20210817, NULL, 'no', NULL, 3521, 'cash', 'None');
+insert into status_of_order values (1247130, 20210816, null, 'no', 2541, null, 'Cash', 'buncha');
+insert into status_of_order values (551213, 20210817, null, 'yes', null, 3527, 'Cash', 'None');
+insert into status_of_order values (5512136, 20210817, null, 'yes', null, 3521, 'Cash', 'None');
+insert into status_of_order values (1247125, 20210816, null, 'no', 2543, null, 'Cash', 'ngusuotngay');
+insert into status_of_order values (1247121, 20210816, 	null, 'yes', null, 3581, 'Cash', 'None');	     
+insert into status_of_order values (1247124, 20210816, 	null, 'yes', null, 3517, 'Cash', 'None');		     
+insert into status_of_order values (1247122, 20210816, 	null, 'no', 2541, null, 'Cash', 'tmuondian');			     
+insert into status_of_order values (5512135, 20210817, 	null, 'no', 2541, null, 'Cash', 'alibaba');		     
+insert into status_of_order values (1247123, 20210816, 	null, 'no', null, 3510, 'Banking transfer', 'None');			     
+insert into status_of_order values (1247126, 20210816, 	null, 'no', 2543, null, 'Cash', 'aothatday');			     
+insert into status_of_order values (1247127, 20210816, 	null, 'yes', null, 3550, 'Banking transfer', 'None');			     
+insert into status_of_order values (1247131, 20210816, 	null, 'no', 2543, null, 'Cash', 'taobao');			     
+insert into status_of_order values (1247129, 20210816, 	null, 'yes', null, 3482, 'Banking transfer', 'None');			     
+insert into status_of_order values (1247133, 20210816, 	null, 'yes', null, 3523, 'Banking transfer', 'None');			     
+insert into status_of_order values (1247128, 20210816, 	null, 'yes', null, 3551, 'Cash', 'None');			     
+insert into status_of_order values (1247132, 20210817, 	null, 'yes', null, 3494, 'Cash', 'None');			     
+		     	     		  
 
 insert into receipt values (1009, 1247128, 3527, 523000, 1456);
 insert into receipt values (1497, 1247125, 6316, 633000, 1028);
@@ -498,7 +407,14 @@ insert into receipt values (3457, 1247126, 6314, 413000, 1028);
 insert into receipt values (3547, 1247123, 3482, 635000, 1028);
 insert into receipt values (6108, 1247129, 3494, 534000, 1456);
 insert into receipt values (9974, 1247130, 1496, 214000, 1456);
-
+insert into receipt values (1113, 55512136, 3521, 634000, 1456);
+insert into receipt values (6730, 1247131, null, 124000, 1028);			     
+insert into receipt values (4141, 1247133, 3523, 150000, 1456);			     
+insert into receipt values (3760, 5512134, 3517, 234000, 1456);			     
+insert into receipt values (4671, 5512135, null, 213000, 1456);			     
+insert into receipt values (2247, 1247122, null, 423000, 1028);			     
+				     
+			     
 insert into provider values (1,3164, 'Hoang Dong private enterprise', 0970252003, 20210816, 1235);
 insert into provider values (2, 8676, 'Tien Giang vegetable company', 0976960012, 20210816, 1475);
 insert into provider values (3,6055, 0989827109, 20210816, 'Viet Hiep cooking spices company', 1235);
