@@ -115,13 +115,6 @@ CREATE TABLE provider(
     constraint provider_manager foreign key (emID) references manager (emID)
 );
 
-CREATE TABLE payment(
-	pID int primary key,
-    total_payment int,
-    payment_method varchar(30),
-    date_of_payment date
-);
-
 CREATE TABLE ingredient(
 	iID varchar(30) primary key,
     name_of_ingredient varchar(30),
