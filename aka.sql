@@ -321,10 +321,10 @@ WHERE	e.emID = m.emID AND m.timekeeping > 2 AND e.employee_role = 'shipper' AND 
 # Querry 2
 SELECT e.employee_name, e.shift, e.employee_role
 FROM	employee e
-WHERE	e.shift = 'day' AND NOT IN(
-SELECT e.employee_name, e.shift, e.employee_role
-FROM	employee e
-WHERE	e.shift = 'day' AND e.employee_role = 'administrator');
+WHERE	e.shift = 'day' AND employee_name NOT IN(
+    SELECT e.employee_name
+    FROM	employee e
+    WHERE	e.shift = 'day' AND e.employee_role = 'administrator');
 
 # Querry 3
 SELECT	round(avg(cr.reviewed_rating), 1), o.date_of_order
