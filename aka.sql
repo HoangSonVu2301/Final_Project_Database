@@ -1,4 +1,3 @@
-DROP DATABASE restaurant;
 CREATE DATABASE restaurant;
 USE restaurant;
 CREATE TABLE employee(
@@ -328,8 +327,9 @@ WHERE	e.shift = 'day' AND employee_name NOT IN(
 
 # Querry 3
 SELECT	round(avg(cr.reviewed_rating), 1), o.date_of_order
-FROM	users u, status_of_order o, CRUD cr
-WHERE	o.date_of_order = 20210816 ;
+FROM	status_of_order o, CRUD cr
+WHERE	cr.user_name = o.user_name
+GROUP BY o.date_of_order;
 
 
 #Querry 5
@@ -348,11 +348,11 @@ WHERE	pr.provider_number = i.provider_number AND pr.date_of_issues = 20210821;
 #Querry 6
 SELECT	u.user_name, o.payment_method, o.date_of_order, r1.total_payment, r2.total_payment *0.3 AS Discount_voucher
 FROM		users u, status_of_order o, receipt r1, receipt r2
-WHERE	r1.receipt_number = r2.receipt_number AND r1.cId = o.cID AND u.user_name = o.user_name AND r1.total_payment > 150000 AND o.date_of_order = 20210816 AND o.payment_method = 'Cash' AND o.cID IS NOT NULL
+WHERE	r1.receipt_number = r2.receipt_number AND r1.oID = o.oID AND u.user_name = o.user_name AND r1.total_payment > 150000 AND o.date_of_order = 20210816 AND o.payment_method = 'Cash'
 UNION
 SELECT	u.user_name, o.payment_method, o.date_of_order, r1.total_payment, r2.total_payment *0.3 AS Discount_voucher
 FROM		users u, status_of_order o, receipt r1, receipt r2
-WHERE	r1.receipt_number = r2.receipt_number AND r1.cId = o.cID AND u.user_name = o.user_name AND r1.total_payment > 150000 AND o.date_of_order = 20210816 AND o.payment_method = 'Banking transfer' AND o.cID IS NOT NULL;
+WHERE	r1.receipt_number = r2.receipt_number AND r1.oId = o.oID AND u.user_name = o.user_name AND r1.total_payment > 150000 AND o.date_of_order = 20210816 AND o.payment_method = 'Banking transfer';
 
 # Querry 4
 SELECT	u.user_name, u.email, r.total_payment, o.date_of_order
@@ -365,13 +365,17 @@ FROM		customer c, users u, receipt r, status_of_order o
 WHERE	c.cID = r.cID AND c.cID = o.cID AND o.date_of_order = 20210817;
 
 # Querry 8
-SELECT 	e.employee_name, m.timekeeping / 7 * 140000 AS salary
+SELECT 	e.employee_name, m.timekeeping / 7 * 140000  AS salary
 FROM		employee e, manage m
-WHERE	 e.emID = m.emID AND m.timekeeping >= 7
+WHERE	 e.emID = m.emID AND m.timekeeping >= 10 AND e.employee_name NOT IN (SELECT e2.employee_name
+    FROM employee e2
+    WHERE e2.employee_role = 'accountant' OR e2.employee_role = 'administrator')
 UNION
 SELECT 	e.employee_name, (m.timekeeping / 7 * 140000 - (7 - m.timekeeping) * 10000 )AS salary
 FROM		employee e, manage m
-WHERE	 e.emID = m.emID AND m.timekeeping < 7;
+WHERE	 e.emID = m.emID AND m.timekeeping < 10 AND e.employee_name NOT IN (SELECT e2.employee_name
+    FROM employee e2
+    WHERE e2.employee_role = 'accountant' OR e2.employee_role = 'administrator');
 
 # Querry 9
 SELECT	i.name_of_ingredient, i.ingredient_price, i.unit, pr.date_of_issues
@@ -400,5 +404,4 @@ GROUP BY	o.date_of_order;
 SELECT 	m.emID, e.employee_name, count(*) as number_of_employee
 FROM		employee e, manage m
 WHERE	m.emID = e.emID
-GROUP BY	m.managerID
-
+GROUP BY	m.managerID;
